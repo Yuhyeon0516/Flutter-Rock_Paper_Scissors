@@ -1,16 +1,7 @@
 # rock_paper_scissors
 
-A new Flutter project.
+It's a simple rock, paper, scissors app that competes against the CPU made with flutter.
 
-## Getting Started
+# Result
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![Result](https://github.com/Yuhyeon0516/Flutter-Rock_Paper_Scissors/assets/120432007/603d07ce-468d-4b6d-91f4-ac8a92ad87d1)
