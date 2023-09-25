@@ -13,7 +13,10 @@ class RPSApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(title: const Text('가위 바위 보')),
+        appBar: AppBar(
+          title: const Text('가위 바위 보'),
+          centerTitle: true,
+        ),
         body: const GameBody(),
       ),
     );
