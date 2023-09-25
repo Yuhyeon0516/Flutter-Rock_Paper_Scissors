@@ -31,7 +31,12 @@ class _GameBodyState extends State<GameBody> {
       children: [
         Expanded(child: CpuInput(isDone: isDone, cpuInput: _cpuInput)),
         Expanded(child: GameResult(isDone: isDone)),
-        Expanded(child: UserInput(isDone: isDone, callback: setUserInput))
+        Expanded(
+            child: UserInput(
+          isDone: isDone,
+          callback: setUserInput,
+          userInput: _userInput,
+        ))
       ],
     );
   }
