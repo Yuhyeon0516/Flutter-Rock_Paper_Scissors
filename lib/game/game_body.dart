@@ -30,7 +30,12 @@ class _GameBodyState extends State<GameBody> {
     return Column(
       children: [
         Expanded(child: CpuInput(isDone: isDone, cpuInput: _cpuInput)),
-        Expanded(child: GameResult(isDone: isDone, result: getResult())),
+        Expanded(
+            child: GameResult(
+          isDone: isDone,
+          result: getResult(),
+          callback: reset,
+        )),
         Expanded(
             child: UserInput(
           isDone: isDone,
@@ -51,6 +56,13 @@ class _GameBodyState extends State<GameBody> {
   void setCpuInput() {
     final random = Random();
     _cpuInput = InputType.values[random.nextInt(3)];
+  }
+
+  void reset() {
+    setState(() {
+      isDone = false;
+      setCpuInput();
+    });
   }
 
   Result? getResult() {
