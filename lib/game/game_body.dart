@@ -15,7 +15,7 @@ class GameBody extends StatefulWidget {
 
 class _GameBodyState extends State<GameBody> {
   late bool isDone;
-  late InputType? _userInput;
+  InputType? _userInput;
   late InputType _cpuInput;
 
   @override
@@ -30,7 +30,7 @@ class _GameBodyState extends State<GameBody> {
     return Column(
       children: [
         Expanded(child: CpuInput(isDone: isDone, cpuInput: _cpuInput)),
-        Expanded(child: GameResult(isDone: isDone)),
+        Expanded(child: GameResult(isDone: isDone, result: getResult())),
         Expanded(
             child: UserInput(
           isDone: isDone,
@@ -51,5 +51,42 @@ class _GameBodyState extends State<GameBody> {
   void setCpuInput() {
     final random = Random();
     _cpuInput = InputType.values[random.nextInt(3)];
+  }
+
+  Result? getResult() {
+    if (_userInput == null) return null;
+
+    switch (_userInput!) {
+      case InputType.rock:
+        switch (_cpuInput) {
+          case InputType.rock:
+            return Result.draw;
+          case InputType.paper:
+            return Result.cpuWin;
+          case InputType.scissors:
+            return Result.playerWin;
+        }
+      case InputType.paper:
+        switch (_cpuInput) {
+          case InputType.rock:
+            return Result.playerWin;
+          case InputType.paper:
+            return Result.draw;
+          case InputType.scissors:
+            return Result.cpuWin;
+        }
+      case InputType.scissors:
+        switch (_cpuInput) {
+          case InputType.rock:
+            return Result.cpuWin;
+          case InputType.paper:
+            return Result.playerWin;
+          case InputType.scissors:
+            return Result.draw;
+        }
+
+      default:
+        return null;
+    }
   }
 }
