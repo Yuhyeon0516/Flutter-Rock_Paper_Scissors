@@ -2,7 +2,7 @@ const assetPath = 'assets/images';
 
 enum InputType {
   rock,
-  papaer,
+  paper,
   scissors;
 
   String get path => '$assetPath/$name.png';
